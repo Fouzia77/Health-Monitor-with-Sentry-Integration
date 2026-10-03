@@ -1,0 +1,21 @@
+{
+  "name": "release-health-monitor-backend",
+  "version": "1.1.0",
+  "description": "Express backend for Release Health Monitor",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "sentry:release": "sentry-cli releases new $SENTRY_RELEASE && sentry-cli releases files $SENTRY_RELEASE upload-sourcemaps ./dist"
+  },
+  "dependencies": {
+    "@sentry/node": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest"
+  },
+  "devDependencies": {
+    "@sentry/cli": "latest",
+    "nodemon": "latest"
+  }
+}
